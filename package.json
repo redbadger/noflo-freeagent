@@ -1,0 +1,34 @@
+{
+  "name": "noflo-freeagent",
+  "description": "FreeAgent components for the NoFlo flow-based programming environment",
+  "author": "Jon Sharratt <jon.sharratt@red-badger.com>",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/redbadger/noflo-freeagent.git"
+  },
+  "keywords": [
+    "noflo",
+    "freeagent",
+    "REST"
+  ],
+  "engines": {
+    "node": ">=0.10.5"
+  },
+  "dependencies": {
+    "coffee-script": "1.4.x",
+    "noflo": ">=0.3.4",
+    "chai": "~1.5.0",
+    "node-freeagent2": "git+https://github.com/redbadger/node-freeagent2.git",
+    "noflo-core": "~0.1.2",
+    "noflo-filesystem": "~1.0.2"
+  },
+  "noflo": {
+    "components": {
+      "GetUsers": "./components/GetUsers.coffee",
+      "GetProjects": "./components/GetProjects.coffee",
+      "GetTimeslips": "./components/GetTimeslips.coffee",
+      "GetInvoices": "./components/GetInvoices.coffee"
+    }
+  }
+}
