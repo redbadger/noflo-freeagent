@@ -26,21 +26,21 @@ module.exports = class FreeAgentComponent extends noflo.AsyncComponent
   requestApi: (token, method, callback) =>
     that = @
 
-    if typeof token is "string"
-      freeagent = new FreeAgent.Api(token, @sandbox)
-      freeagent[method] @params, (error, data) ->
-        if error
-          that.outPorts.out.disconnect()
-          return callback error
-        else
-          if that.outPorts.out.isAttached
-            that.outPorts.out.send data
-            that.outPorts.out.disconnect
-            return callback
-
-        that.outPorts.out.disconnect
-        return callback
-    else
+    unless token and typeof token is "string"
       return callback new Error 'A valid token needs to be supplied to IN port.'
+
+    freeagent = new FreeAgent.Api(token, @sandbox)
+    freeagent[method] @params, (error, data) ->
+      if error
+        that.outPorts.out.disconnect()
+        return callback error
+      else
+        if that.outPorts.out.isAttached
+          that.outPorts.out.send data
+          that.outPorts.out.disconnect
+          return callback
+
+      that.outPorts.out.disconnect
+      return callback
 
 
