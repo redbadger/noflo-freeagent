@@ -6,6 +6,6 @@ class GetUsers extends FreeAgentComponent
     super
 
   doAsync: (token, callback) =>
-    @requestApi token, 'getUsers', callback
+    @getData token, 'getUsers', callback
 
 exports.getComponent = -> new GetUsers

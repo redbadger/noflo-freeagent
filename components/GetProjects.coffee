@@ -11,6 +11,6 @@ class GetProjects extends FreeAgentComponent
       @params.view = data
 
   doAsync: (token, callback) =>
-    @requestApi token, 'getProjects', callback
+    @getData token, 'getProjects', callback
 
 exports.getComponent = -> new GetProjects

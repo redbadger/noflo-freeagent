@@ -9,11 +9,11 @@ class GetTimeslips extends FreeAgentComponent
     @inPorts.to = new noflo.Port
 
     @inPorts.from.on 'data', (data) =>
-      @params.from = data
+      @params.from_date = data
     @inPorts.to.on 'data', (data) =>
-      @params.to = data
+      @params.to_date = data
 
   doAsync: (token, callback) =>
-    @requestApi token, 'getTimeslips', callback
+    @getData token, 'getTimeslips', callback
 
 exports.getComponent = -> new GetTimeslips
