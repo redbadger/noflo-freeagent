@@ -13,15 +13,9 @@ module.exports = class FreeAgentComponent extends noflo.AsyncComponent
 
     @inPorts.in = new noflo.Port
     @inPorts.sandbox = new noflo.Port
-    @inPorts.page = new noflo.Port 'int'
-    @inPorts.perpage = new noflo.Port 'int'
 
     @inPorts.sandbox.on 'data', (data) =>
       @sandbox = data
-    @inPorts.page.on 'data', (data) =>
-      @params.page = parseInt data
-    @inPorts.perpage.on 'data', (data) =>
-      @params.per_page = parseInt data
 
     @outPorts =
       out: new noflo.Port
