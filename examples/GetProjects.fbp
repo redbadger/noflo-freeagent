@@ -1,5 +1,6 @@
 'active' -> VIEW FreeAgentProjects(freeagent/GetProjects)
 'true' -> SANDBOX FreeAgentProjects
 'FREEAGENT_TOKEN' -> KEY ReadAccessToken(core/ReadEnv)
-ReadAccessToken OUT -> IN FreeAgentProjects
-FreeAgentProjects OUT -> IN ConsoleLogger(core/Output)
+ReadAccessToken OUT -> TOKEN FreeAgentProjects
+
+'' -> IN FreeAgentProjects OUT -> IN ConsoleLogger(core/Output)

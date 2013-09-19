@@ -13,7 +13,7 @@ class GetTimeslips extends FreeAgentComponent
     @inPorts.to.on 'data', (data) =>
       @params.to_date = data
 
-  doAsync: (token, callback) =>
-    @getData token, 'getTimeslips', callback
+  doAsync: (data, callback) =>
+    @getData 'getTimeslips', callback
 
 exports.getComponent = -> new GetTimeslips

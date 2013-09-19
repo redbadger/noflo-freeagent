@@ -5,7 +5,7 @@ class GetUsers extends FreeAgentComponent
   constructor: ->
     super
 
-  doAsync: (token, callback) =>
-    @getData token, 'getUsers', callback
+  doAsync: (data, callback) =>
+    @getData 'getUsers', callback
 
 exports.getComponent = -> new GetUsers

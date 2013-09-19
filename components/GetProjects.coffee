@@ -10,7 +10,7 @@ class GetProjects extends FreeAgentComponent
     @inPorts.view.on 'data', (data) =>
       @params.view = data
 
-  doAsync: (token, callback) =>
-    @getData token, 'getProjects', callback
+  doAsync: (data, callback) =>
+    @getData 'getProjects', callback
 
 exports.getComponent = -> new GetProjects

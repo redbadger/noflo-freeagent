@@ -10,7 +10,7 @@ class GetInvoices extends FreeAgentComponent
     @inPorts.view.on 'data', (data) =>
       @params.view = data
 
-  doAsync: (token, callback) =>
-    @getData token, 'getInvoices', callback
+  doAsync: (data, callback) =>
+    @getData 'getInvoices', callback
 
 exports.getComponent = -> new GetInvoices
