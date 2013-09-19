@@ -6,8 +6,6 @@ module.exports = class FreeAgentComponent extends noflo.AsyncComponent
     @sandbox = false
     @inPorts = {}
 
-    @results = []
-
     @inPorts.in = new noflo.Port 'object'
     @inPorts.sandbox = new noflo.Port
     @inPorts.token = new noflo.Port
@@ -30,6 +28,7 @@ module.exports = class FreeAgentComponent extends noflo.AsyncComponent
 
   getData: (method, callback) =>
     that = @
+    @results = []
     @requestPagedData method, (error, result) ->
       if that.outPorts.out.isAttached
         that.outPorts.out.send result
