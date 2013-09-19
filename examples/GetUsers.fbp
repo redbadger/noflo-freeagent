@@ -1,5 +1,2 @@
-'true' -> SANDBOX FreeAgentUsers(freeagent/GetUsers)
-'FREEAGENT_TOKEN' -> KEY ReadAccessToken(core/ReadEnv)
-ReadAccessToken OUT -> TOKEN FreeAgentUsers
-
+'true' -> SANDBOX FreeAgentUsers(freeagent/GetUsers) 'FREEAGENT_TOKEN' -> KEY ReadAccessToken(core/ReadEnv) ReadAccessToken OUT -> TOKEN FreeAgentUsers
 '' -> IN FreeAgentUsers OUT -> IN ConsoleLogger(core/Output)

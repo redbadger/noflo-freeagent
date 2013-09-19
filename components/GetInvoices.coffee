@@ -5,12 +5,7 @@ class GetInvoices extends FreeAgentComponent
   constructor: ->
     super
 
-    @inPorts.view = new noflo.Port
-
-    @inPorts.view.on 'data', (data) =>
-      @params.view = data
-
-  doAsync: (data, callback) =>
+  doAsync: (params, callback) =>
     @getData 'getInvoices', callback
 
 exports.getComponent = -> new GetInvoices

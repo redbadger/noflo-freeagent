@@ -7,19 +7,22 @@ module.exports = class FreeAgentComponent extends noflo.AsyncComponent
     @inPorts = {}
 
     @results = []
-    @params = {}
-    @params.page = 1
-    @params.perpage = 50
 
-    @inPorts.in = new noflo.Port
+    @inPorts.in = new noflo.Port 'object'
     @inPorts.sandbox = new noflo.Port
     @inPorts.token = new noflo.Port
 
     @inPorts.sandbox.on 'data', (data) =>
       @sandbox = data
-
     @inPorts.token.on 'data', (data) =>
       @token = data
+    @inPorts.in.on 'data', (data) =>
+      try
+        @params = JSON.parse data
+      catch error
+        @params = {}
+      @params.page = 1
+      @params.perpage = 50
 
     @outPorts =
       out: new noflo.Port

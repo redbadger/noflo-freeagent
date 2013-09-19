@@ -1,6 +1,2 @@
-'true' -> SANDBOX FreeAgentInvoices
-'FREEAGENT_TOKEN' -> KEY ReadAccessToken(core/ReadEnv)
-'recent_open_or_overdue' -> VIEW FreeAgentInvoices(freeagent/GetInvoices)
-ReadAccessToken OUT -> TOKEN FreeAgentInvoices
-
-'' -> IN FreeAgentInvoices OUT -> IN ConsoleLogger(core/Output)
+'true' -> SANDBOX FreeAgentInvoices(freeagent/GetInvoices) 'FREEAGENT_TOKEN' -> KEY ReadAccessToken(core/ReadEnv) ReadAccessToken OUT -> TOKEN FreeAgentInvoices
+'examples/invoices.json' -> IN ReadFile(ReadFile) OUT -> IN FreeAgentInvoices OUT -> IN ConsoleLogger(core/Output)

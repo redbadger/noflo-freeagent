@@ -1,4 +1,2 @@
-'true' -> SANDBOX FreeAgentTimeslips(freeagent/GetTimeslips)
-'FREEAGENT_TOKEN' -> KEY ReadAccessToken(core/ReadEnv)
-ReadAccessToken OUT -> TOKEN FreeAgentTimeslips
-'' -> IN FreeAgentTimeslips OUT -> IN ConsoleLogger(core/Output)
+'true' -> SANDBOX FreeAgentTimeslips(freeagent/GetTimeslips) 'FREEAGENT_TOKEN' -> KEY ReadAccessToken(core/ReadEnv) ReadAccessToken OUT -> TOKEN FreeAgentTimeslips
+'examples/timeslips.json' -> IN ReadFile(ReadFile) OUT -> IN FreeAgentTimeslips OUT -> IN ConsoleLogger(core/Output)
